@@ -9,6 +9,9 @@ import com.devalvesg.desafiouolhost.Repositories.JogadorRepositorie;
 import com.devalvesg.desafiouolhost.Services.ExternalServices.CodinomeJson;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 
 @Service
 public class JogadorService {
@@ -21,6 +24,9 @@ public class JogadorService {
     }
 
 
+    public List<Jogador> findAll(){
+        return jogadorRepositorie.findAll();
+    }
 
 
     public void novoJogador(JogadorDTO jogadorDTO) throws Exception {
@@ -33,5 +39,17 @@ public class JogadorService {
 
     }
 
+    public Jogador findById(Long id) throws Exception {
+        Optional<Jogador> resultado = jogadorRepositorie.findById(id);
+        return resultado.orElseThrow(() -> new Exception("Usuario não encontrado em nossa base de dados!"));
 
+    }
+
+    public void deleteById(Long id) throws Exception {
+        try{
+            jogadorRepositorie.deleteById(id);
+        }catch (Exception e){
+            throw new Exception("Usuario não encontrado em nossa base de dados!");
+        }
+    }
 }

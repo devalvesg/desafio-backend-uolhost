@@ -6,6 +6,7 @@ Esta API oferece funcionalidades para o gerenciamento de jogadores, permitindo a
 - **Spring (Boot, JPA)**
 - **Ferramentas para Deserialização de JSON e XML**
 - **Docker**
+- **Design patterns**
 
 
 ## Endpoints Disponíveis

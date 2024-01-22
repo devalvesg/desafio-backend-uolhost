@@ -48,6 +48,7 @@ public class CodinomeJson {
             if(grupo == Grupo.VINGADORES.toString()){
                 VingadoresResponse respostaConvertida = converterJson(respostaAPI);
                 String respostaFinal = validacaoCodinome(respostaConvertida);
+                codinomes.add(respostaFinal);
                 return respostaFinal;
             }
 
@@ -89,9 +90,8 @@ public class CodinomeJson {
     public String validacaoCodinome(VingadoresResponse response) throws Exception {
         for(Vingador vingador : response.getVingadores()){
             if(!codinomes.contains(vingador.getCodinome())){
-                System.out.println(codinomes);
+                Boolean teste = codinomes.contains(vingador.getCodinome());
                 return vingador.getCodinome();
-
             }
         }
 
