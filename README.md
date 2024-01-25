@@ -6,7 +6,13 @@ Esta API oferece funcionalidades para o gerenciamento de jogadores, permitindo a
 - **Spring (Boot, JPA)**
 - **Ferramentas para Deserialização de JSON e XML**
 - **Docker**
-- **Design patterns**
+- **Testes Unitários (JUnit)**
+
+## Práticas adotadas
+- SOLID
+- Uso de DTOs para a API
+- Injeção de Dependências
+- Mapeamento ORM
 
 
 ## Endpoints Disponíveis
@@ -57,10 +63,16 @@ Ao criar um novo jogador, é feita a verificação de acordo com o grupo selecio
 
 Certifique-se de ter o Java e as dependências do projeto instaladas para executá-lo.
 
-## Executando o Projeto
+## Como executar o projeto
 
-1. Clone o repositório.
-2. Configure as dependências e o ambiente de acordo com o arquivo de configuração fornecido.
-3. Execute a aplicação.
-4. Use as rotas mencionadas acima para interagir com a API.
+- Clonar repositório git
+- Construir o projeto:
+```
+./mvnw clean package
+```
+- Executar:
+```
+java -jar place-service/target/place-service-0.0.1-SNAPSHOT.jar
+```
 
+A API poderá ser acessada em [localhost:8080](http://localhost:8080).
